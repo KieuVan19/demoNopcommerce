@@ -23,9 +23,10 @@ public class RegisterNewUserTests extends BaseTest {
     }
 
     @Test
-    public void registerWithValidDataFilledForAllFields() {
+    public void registerWithValidDataFilledForAllFields() throws InterruptedException {
 
         navigateTo(Navigation.register_EP);
+        Thread.sleep(3000);
         System.out.println(registerPage.printDOM());
 //        registerPage.selectGender("male");
 //        registerPage.setFirstName(TestDataFactory.getFirstName());
