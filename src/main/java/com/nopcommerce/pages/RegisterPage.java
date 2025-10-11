@@ -9,6 +9,10 @@ public class RegisterPage extends BasePage {
         super(driver);
     }
 
+    public String printDOM() {
+        return super.driver.getPageSource();
+    }
+
     By gender_M_BTN = By.id("gender-male");
     By gender_F_BTN = By.id("gender-female");
     By firstName_TXT = By.id("FirstName");

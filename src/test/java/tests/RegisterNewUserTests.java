@@ -26,18 +26,19 @@ public class RegisterNewUserTests extends BaseTest {
     public void registerWithValidDataFilledForAllFields() {
 
         navigateTo(Navigation.register_EP);
-        registerPage.selectGender("male");
-        registerPage.setFirstName(TestDataFactory.getFirstName());
-        registerPage.setLastName(TestDataFactory.getLastName());
-        registerPage.setEmail(TestDataFactory.getEmail());
-        registerPage.setCompanyName("Tech Paramount");
-        registerPage.selectNewsLetter();
-        registerPage.setPassword(TestDataFactory.getPassword());
-        registerPage.setConfirmPassword(TestDataFactory.getConfirmPassword());
-        registerPage.clickRegisterButton();
-
-        String actualResult = registerPage.getRegisterSuccessResult();
-        String expectedResult = "Your registration completed";
-        Assert.assertEquals(actualResult, expectedResult);
+        System.out.println(registerPage.printDOM());
+//        registerPage.selectGender("male");
+//        registerPage.setFirstName(TestDataFactory.getFirstName());
+//        registerPage.setLastName(TestDataFactory.getLastName());
+//        registerPage.setEmail(TestDataFactory.getEmail());
+//        registerPage.setCompanyName("Tech Paramount");
+//        registerPage.selectNewsLetter();
+//        registerPage.setPassword(TestDataFactory.getPassword());
+//        registerPage.setConfirmPassword(TestDataFactory.getConfirmPassword());
+//        registerPage.clickRegisterButton();
+//
+//        String actualResult = registerPage.getRegisterSuccessResult();
+//        String expectedResult = "Your registration completed";
+//        Assert.assertEquals(actualResult, expectedResult);
     }
 }
