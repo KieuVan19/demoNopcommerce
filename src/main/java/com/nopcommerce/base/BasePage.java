@@ -17,7 +17,7 @@ public class BasePage {
 
     public BasePage(WebDriver driver) {
         BasePage.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
     public static void navigateTo(String pageName) {
@@ -60,6 +60,7 @@ public class BasePage {
     }
 
     public String getText(By locator) {
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         WebElement element = waitUntilElementIsVisible(locator);
         return element.getText();
     }

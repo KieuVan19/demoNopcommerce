@@ -28,18 +28,12 @@ public class FilterProductsByDropDownListTests extends BaseTest {
     public void productIsSortedByPriceInAscendingOrder() {
         navigateTo(notebooksProduct_EP);
 
-        ArrayList<Double> beforeSorting = searchResultPage.getFoundProductsPrice();
-        System.out.println(beforeSorting);
         searchResultPage.sortBy("Price: Low to High");
 
         if (loadingSymbolIsDisappeared()) {
             ArrayList<Double> afterSorting = searchResultPage.getFoundProductsPrice();
-            System.out.println(afterSorting);
 
             for (int i = 0; i < afterSorting.size() - 1; i++) {
-                System.out.println("Round " + i);
-                System.out.println("i: " + afterSorting.get(i));
-                System.out.println("i+1: " + afterSorting.get(i + 1));
                 Assert.assertTrue(afterSorting.get(i) <= afterSorting.get(i + 1));
             }
         } else System.out.println("Sort option is not applied to products");
@@ -52,12 +46,8 @@ public class FilterProductsByDropDownListTests extends BaseTest {
 
         if (loadingSymbolIsDisappeared()) {
             ArrayList<Double> productsPrice = searchResultPage.getFoundProductsPrice();
-            System.out.println(productsPrice);
 
             for (int i = 0; i < productsPrice.size() - 1; i++) {
-                System.out.println("Round " + i);
-                System.out.println("i: " + productsPrice.get(i));
-                System.out.println("i+1: " + productsPrice.get(i + 1));
                 Assert.assertTrue(productsPrice.get(i) >= productsPrice.get(i + 1));
             }
         } else System.out.println("Sort option is not applied to products");
@@ -70,7 +60,6 @@ public class FilterProductsByDropDownListTests extends BaseTest {
 
         if (loadingSymbolIsDisappeared()) {
             ArrayList<String> productsTitle = searchResultPage.getFoundProductsTitle();
-            System.out.println(productsTitle);
             ArrayList<String> productsTitle1 = new ArrayList<>(productsTitle);
             Collections.sort(productsTitle1);
             Assert.assertEquals(productsTitle, productsTitle1);
@@ -85,7 +74,6 @@ public class FilterProductsByDropDownListTests extends BaseTest {
 
         if (loadingSymbolIsDisappeared()) {
             ArrayList<String> productsTitle = searchResultPage.getFoundProductsTitle();
-            System.out.println(productsTitle);
             ArrayList<String> productsTitle1 = new ArrayList<>(productsTitle);
             productsTitle1.sort(Collections.reverseOrder());
             Assert.assertEquals(productsTitle, productsTitle1);
